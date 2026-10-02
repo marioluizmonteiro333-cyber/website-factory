@@ -15,11 +15,12 @@ O produto deve permitir, progressivamente, selecionar um template, aplicar ident
 - IA limitada a regras, estruturas e padrões aprovados.
 - Simplicidade arquitetural até existir uma necessidade comprovada.
 
-## Restrições iniciais
+## Restrições por fase
 
 - Sem orçamento de investimento ou custos recorrentes obrigatórios.
 - Preferência por ferramentas gratuitas, open source e execução local.
-- Nesta etapa não criar aplicação, instalar dependências, criar templates, componentes, database, CI/CD ou deploy.
+- Na Fase 0, não criar aplicação, instalar dependências, criar templates, componentes, database, CI/CD ou deploy.
+- Na Fase 1 — FOUNDATION, implementar apenas o escopo aprovado abaixo e detalhado na PRODUCT_SPEC.md e ARCHITECTURE.md; não antecipar as funcionalidades excluídas dessa fase.
 
 ## Documentação
 
@@ -30,9 +31,11 @@ O produto deve permitir, progressivamente, selecionar um template, aplicar ident
 
 ## Estado atual
 
-**Fase 0 — APPROVED**
+**Fase 0 — APPROVED / concluída**
 
-Decisões aprovadas: stack MVP definida; Git obrigatório e GitHub como repositório principal; Golden Standard obrigatório; quality gates iniciais aprovados; dados iniciais em JSON validados por Zod; database fora da primeira implementação.
+Baselines aprovados: sete contratos canónicos e regras documentais do Registry; distinção entre Registry de artefactos reutilizáveis e Business Data por instância; aprovação e exceções por Product Owner e Engineering Reviewer (a mesma pessoa pode exercer ambos os papéis nesta fase); enforcement de LEVEL 1/2/3, sem introdução arbitrária de capacidade LEVEL 3 pela IA; geração de websites independentes e Build Manifest; escopo aprovado da Fase 1 — FOUNDATION. Decisões técnicas aprovadas: stack MVP; Git obrigatório e GitHub como repositório principal; Golden Standard obrigatório; quality gates por fase; dados iniciais em JSON validados por Zod; database fora da primeira implementação.
+
+A Fase 1 — FOUNDATION — é a fundação técnica + primeiro padrão validável. O seu escopo, entregáveis, exclusões e critérios de conclusão estão definidos na secção 14 de ARCHITECTURE.md e na secção 17 de PRODUCT_SPEC.md. A Fase 0 está fechada; a implementação desses entregáveis pertence à Fase 1 e não foi antecipada pelo seu fecho.
 
 ## Source of Truth
 

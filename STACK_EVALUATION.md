@@ -1,4 +1,4 @@
-# Avaliação Técnica da Stack — Proposta Fase 0
+# Avaliação Técnica da Stack — MVP
 
 ## Critérios
 
@@ -6,9 +6,9 @@ Avaliação baseada em custo obrigatório, licença, execução local, maturidad
 
 | Tecnologia | Custo/licença | Local, maturidade e integração | Adequação, replicação e riscos | Parecer |
 | --- | --- | --- | --- | --- |
-| Next.js | Sem custo obrigatório; MIT. | Execução local e self-hosting suportados; framework React maduro. Integra React, TypeScript, ESLint e Playwright. | Bom para websites com SEO e geração estática; reduz decisões de integração. Risco: funcionalidades dinâmicas elevam exigências de hosting. | Aprovado para MVP, inicialmente com escopo estático. |
+| Next.js | Sem custo obrigatório; MIT. | Execução local e self-hosting suportados; framework React maduro. Integra React, TypeScript, ESLint e Playwright. | Engine de rendering/build para gerar websites independentes, com suporte a SEO e geração estática; reduz decisões de integração. Risco: funcionalidades dinâmicas elevam exigências de hosting. | Aprovado como engine de rendering/build para outputs independentes do MVP, privilegiando geração estática quando os requisitos permitirem. |
 | React | Sem custo obrigatório; MIT. | Local e muito maduro; fundação do Next.js. | Excelente para componentes reutilizáveis. Sozinho exige decidir build, rotas, SEO e convenções. | Aprovado através do Next.js, não como stack paralela. |
-| Tailwind CSS | Sem custo obrigatório; MIT. | Compilação local, zero runtime; maduro e integrado com React/Next. | Tokens e utilitários facilitam consistência. Risco: classes dispersas se o Design System não abstrair componentes. | Aprovado, condicionado a Theme/Component Contract. |
+| Tailwind CSS | Sem custo obrigatório; MIT. | Compilação local, zero runtime; maduro e integrado com React/Next. | Utilitários facilitam implementação consistente dos tokens. Risco: classes dispersas se o Design System não abstrair componentes. | Aprovado como consumidor visual dos tokens definidos pelo Theme Contract, não como fonte de verdade dos tokens. |
 | Zod | Sem custo obrigatório; MIT. | Local, TypeScript-first, sem dependências externas. | Mantém contratos de dados executáveis e reutilizáveis. Risco: schemas duplicados ou transformações excessivas. | Aprovado para contratos. |
 | Vitest | Sem custo obrigatório; MIT. | Local, maduro; integração natural com TypeScript e ecossistema Vite. | Rápido para contratos e lógica pura. Risco: exige configuração própria fora de Vite/Next e não substitui E2E. | Aprovado para testes unitários/contratos. |
 | Playwright | Sem custo obrigatório; Apache-2.0. | Local/CI, multi-browser e emulação mobile. | Forte para E2E, responsive e evidências. Risco: downloads de browsers e tempo de execução. | Aprovado para fluxos críticos; cobertura inicial limitada. |
@@ -18,14 +18,15 @@ Avaliação baseada em custo obrigatório, licença, execução local, maturidad
 
 ## Stack aprovada para o MVP
 
-- Next.js + React + TypeScript para a aplicação e geração de websites.
-- Tailwind CSS para implementação dos tokens e estilos do Design System.
+- Next.js como engine de rendering/build dos websites gerados; React + TypeScript para componentes e core da Factory.
+- Theme Contract como fonte de verdade dos tokens; CSS Custom Properties como ponte canónica para Tailwind e componentes.
+- Tailwind CSS para aplicar os tokens e estilos do Design System.
 - Zod para contratos de dados e validação em runtime.
 - Vitest para unitários e contratos; Playwright para E2E crítico, responsive e evidência visual.
 - ESLint + Prettier para qualidade estática e consistência.
 - Git obrigatório e GitHub como repositório principal.
 
-Esta composição está aprovada para o MVP, funciona localmente e não requer serviço pago. Não adiciona outras tecnologias. Hosting, CI/CD, database, ferramenta de IA, visual regression e deploy continuam sem decisão.
+Esta composição está aprovada para o MVP, funciona localmente e não requer serviço pago. Não adiciona outras tecnologias. Hosting, CI/CD, database, ferramenta de IA, ativação/ferramenta de visual regression e deploy continuam sem decisão. Os websites gerados são outputs independentes; Next.js não define um runtime multi-tenant da Factory.
 
 ## Source of Truth
 
