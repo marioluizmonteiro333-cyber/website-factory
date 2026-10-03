@@ -11,9 +11,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --passWithNoTests",
+    "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test --pass-with-no-tests"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "^16.0.0",

@@ -71,7 +71,7 @@ DRAFT → DEVELOPMENT → TESTING → APPROVED → PRODUCTION → DEPRECATED →
 
 - Apenas artefactos APPROVED ou PRODUCTION podem ser selecionados para novos artefactos, novas versões e novas dependências; PRODUCTION é a escolha default para novas gerações. Um consumidor aprovado/production pode continuar a usar uma dependência DEPRECATED que já tenha fixado, conforme as regras abaixo.
 - Todo artefacto reutilizável é versionado e tem estado de aprovação rastreável.
-- Dependências são referenciadas por identidade e versão explícita. Marcar uma dependência como DEPRECATED não invalida retroativamente a referência já fixada por um consumidor aprovado/production, nem desencadeia cascata automática de invalidação. Uma nova versão do consumidor deve atualizar a dependência quando necessário.
+- Dependências são referenciadas por identidade e versão explícita. Marcar uma dependência como DEPRECATED não invalida retroativamente a referência já fixada por um consumidor aprovado/production, nem desencadeia cascata automática de invalidação. O metadado `deprecatedPin` no Registry apenas identifica esse pin grandfathered numa versão de consumidor existente; não autoriza a criação de novas dependências nem pode ser submetido ao validar uma nova versão do consumidor. Uma nova versão do consumidor deve atualizar a dependência quando necessário.
 - Uma alteração incompatível exige nova versão ou processo explícito de migração.
 - Um novo template deve reutilizar o Design System, componentes e padrões existentes. A criação de um novo padrão deve ser uma decisão arquitetural explícita e documentada.
 - Templates não aprovados e opções fora de contrato são inelegíveis para produção.
